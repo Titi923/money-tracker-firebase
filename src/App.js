@@ -1,10 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
     <div className="App">
-   
+      <h1>Text</h1>
+      <button className='btn'>ASDAS</button>
     </div>
   );
 }
