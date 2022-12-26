@@ -27,3 +27,6 @@ ul {
   background: #1da857;
   color: #fff;
 }
+.error {
+  color: red;
+}

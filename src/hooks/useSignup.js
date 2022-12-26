@@ -17,9 +17,8 @@ export const useSignup = () => {
       if (!response) {
           throw new Error("Could not complete signup")
       }
-
       // add display name to user after creating it
-      await response.user.updateProfile({displayName: displayName})
+      await response.user.updateProfile({ displayname: displayName })
 
       setIsPending(false)
       setError(null)
