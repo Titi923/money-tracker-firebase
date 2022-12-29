@@ -14,16 +14,13 @@ export const useSignup = () => {
 
     try {
       // signup user
-      const response = await projectAuth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
+      const response = await projectAuth.createUserWithEmailAndPassword(email, password);
 
       if (!response) {
         throw new Error('Could not complete signup');
       }
       // add display name to user after creating it
-      await response.user.updateProfile({ displayname: displayName });
+      await response.user.updateProfile({ displayName: displayName });
 
       // dispatch login action
       dispatch({ type: 'LOGIN', payload: response.user });
@@ -45,5 +42,5 @@ export const useSignup = () => {
     return () => setIsCancelled(true);
   }, []);
 
-  return { error, isPending, signup };
+  return { signup, error, isPending };
 };
