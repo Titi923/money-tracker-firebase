@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // pages & components
 import Home from "./pages/home/Home"
@@ -17,9 +17,17 @@ function App() {
           <Navbar />
           
           <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/signup" element={<Signup />}></Route>
+            {!user && <Route path="/" element={<Login />}></Route>}
+            {user && <Route path="/" element={<Home />}></Route>}
+
+            {!user && <Route path="/login" element={<Login />}></Route>}
+            {!user && <Route path="/login" element={<Home />}></Route>}
+
+            {!user && <Route path="/signup" element={<Signup />}></Route>}
+            {user && <Route path="/" element={<Home />}></Route>}
+
+            {/* In case user wants to type an invalid url */}
+            <Route path="/*" element={<Home />}></Route>
           </Routes>
         </BrowserRouter>
       )}
