@@ -70,7 +70,8 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  border-left: 4px solid #1f9751;
+  border-left: 6px solid #1f9751;
+  border-radius: 3px;
 }
 .transactions .name {
   color: #777;
