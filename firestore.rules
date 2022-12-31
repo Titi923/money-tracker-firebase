@@ -5,6 +5,8 @@ service cloud.firestore {
       // allow read, write;
       // allow read, create, delete, update;
 
+
+      // only aut 
       allow create: if request.auth != null;
 
       // logged in user uid must match the document creator to read & delete
