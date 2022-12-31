@@ -16,6 +16,8 @@ export default function TransactionForm({ uid }) {
 
     setName('')
     setAmount('')
+
+    console.log(response.success);
   }
 
   return (
